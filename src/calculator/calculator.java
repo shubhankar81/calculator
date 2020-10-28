@@ -3,10 +3,14 @@ package calculator;
 public class calculator {
 
 	int add(String numbers) {
+		int a=0,b=0;
+		if(numbers.contains(",")) {
+			String num[] = numbers.split(",");
+			a=Integer.parseInt(num[0]);
+			b=Integer.parseInt(num[1]);
+		}
 		
-		int a=1;
-		int b=1;
-		return numbers=="" ? 0 : a+b ;
+		return numbers.isEmpty() ? 0 : a+b ;
 	}
 	
 	public static void main(String ar[]) {
