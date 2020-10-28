@@ -58,4 +58,14 @@ class calculatorTest {
 	public void testwithDelimetersWithGreater() throws Exception {
 		assertEquals(27, c.add("//;\\n1008;20;7"));
 	}
+	
+	@Test
+	public void testWithMultipleDelimeters1() throws Exception {
+		assertEquals(6, c.add("[***]\\n1***2***3"));
+	}
+	@Test
+	public void testWithMultipleDelimeters2() throws Exception {
+		assertEquals(6, c.add("//[*][%]\\n1*2%3"));
+	}
+	
 }
