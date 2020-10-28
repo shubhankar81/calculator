@@ -21,11 +21,11 @@ public class calculator {
 				if(Character.isDigit(numbers.charAt(i))) {
 					b+=numbers.charAt(i);
 				}else{
-					a+= b!=""?Integer.parseInt(b):0;
+					a+= b!= "" ? Integer.parseInt(b) : 0;
 					b="";
 				}
 				if(i==numbers.length()-1) {
-					a+= b!=""?Integer.parseInt(b):0;
+					a+= b != "" ?Integer.parseInt(b) : 0;
 				}
 				
 			}

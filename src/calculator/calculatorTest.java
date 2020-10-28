@@ -35,6 +35,6 @@ class calculatorTest {
 	
 	@Test
 	public void testwithDelimeters() {
-		assertEquals(12, c.add("//;\\n10;2"));
+		assertEquals(30, c.add("//;\\n10;20"));
 	}
 }
