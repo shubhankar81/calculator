@@ -49,4 +49,13 @@ class calculatorTest {
 		assertTrue(e instanceof Exception);
 		
 	}
+	
+	@Test
+	public void testWithGreaterValue() throws Exception {
+		assertEquals(10, c.add("2,1008,8"));
+	}
+	@Test
+	public void testwithDelimetersWithGreater() throws Exception {
+		assertEquals(27, c.add("//;\\n1008;20;7"));
+	}
 }

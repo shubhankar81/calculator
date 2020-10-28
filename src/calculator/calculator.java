@@ -4,14 +4,14 @@ public class calculator {
 	
 	public void checkNegative(int number) throws Exception {
 		if(number<0) {
-			throw new Exception("Negatives not Allowed");
+			throw new Exception("Negatives not Allowed"+ number);
 		}
 	}
 	int add(String numbers) throws Exception {
 		int a=0;
 		if(numbers.length() == 1) {
 			try { 
-				a+= Integer.parseInt(numbers);
+				a+= Integer.parseInt(numbers) > 1000 ? 0 : Integer.parseInt(numbers) ;
 				this.checkNegative(a);
 			}catch(Exception e) {
 				
@@ -19,7 +19,7 @@ public class calculator {
 		}else if(numbers.contains(",")||numbers.contains("\n")) {
 			String num[] = numbers.split(",|\n");
 			for(String i: num) {
-				a+=Integer.parseInt(i);
+				a+=Integer.parseInt(i) > 1000 ? 0 : Integer.parseInt(i) ;
 				this.checkNegative(a);
 			}
 		}else {
@@ -28,12 +28,12 @@ public class calculator {
 				if(Character.isDigit(numbers.charAt(i))) {
 					b+=numbers.charAt(i);
 				}else{
-					a+= b!= "" ? Integer.parseInt(b) : 0;
+					a+= b!= "" ? Integer.parseInt(b) > 1000 ? 0 : Integer.parseInt(b) : 0;
 					this.checkNegative(a);
 					b="";
 				}
 				if(i==numbers.length()-1) {
-					a+= b != "" ?Integer.parseInt(b) : 0;
+					a+= b != "" ?Integer.parseInt(b) > 1000 ? 0 : Integer.parseInt(b) : 0;
 				}
 				
 			}
