@@ -32,4 +32,9 @@ class calculatorTest {
 	public void testWithNewLines() {
 		assertEquals(10, c.add("1,2,3\n4"));
 	}
+	
+	@Test
+	public void testwithDelimeters() {
+		assertEquals(12, c.add("//;\\n10;2"));
+	}
 }
